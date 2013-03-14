@@ -1,0 +1,20 @@
+<h2>You're almost ready for great adventures.</h2>
+<h4>Fill in the info below and you're ready to roll.</h4>
+
+<%= form_for(resource, :as => resource_name, :url => confirm_path) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  
+  <%= f.hidden_field :confirmation_token %>
+  
+  <%= f.submit :value => "Finish setting up account" %>
+  
+<% end %> 

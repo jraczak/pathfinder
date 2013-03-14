@@ -1,0 +1,5 @@
+<p>Welcome to Pathfinder, <%= @resource.email %>!</p>
+
+<p>Confirm your email address using the link below and we can finish creating your account.</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
