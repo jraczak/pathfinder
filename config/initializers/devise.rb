@@ -215,7 +215,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require 'omniauth-facebook'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
-  config.omniauth :facebook, '227709094039810', '9856b983be9ee35e567ae63ed60d2397', :strategy_class => OmniAuth::Strategies::Facebook, :scope => 'email,create_event,rsvp_event,publish_actions,user_photos,first_name,last_name,username,gender'
+  config.omniauth :facebook, '227709094039810', '9856b983be9ee35e567ae63ed60d2397', :strategy_class => OmniAuth::Strategies::Facebook, :scope => 'email,create_event,rsvp_event,publish_actions,user_photos,'
   config.omniauth :twitter, "CONSUMER_KEY", "CONSUMER_SECRET"
 
   # ==> Warden configuration
