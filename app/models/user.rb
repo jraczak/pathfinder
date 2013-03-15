@@ -33,7 +33,6 @@ class User < ActiveRecord::Base
       						)
       user.skip_confirmation_notification!
       user.save
-      user.confirm!
     end
     user
   end
