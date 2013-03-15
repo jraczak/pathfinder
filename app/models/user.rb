@@ -24,14 +24,15 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
-      user = User.create(first_name: auth.info.first_name,
+      user = User.new(first_name: auth.info.first_name,
       						last_name: auth.info.last_name,
       						email: auth.info.email,
       						provider: auth.provider,
       						uid: auth.uid,
       						facebook_url: auth.extra.raw_info.link
       						)
-      user.skip_confirmation!
+    user.skip_confirmation!
+    user.save
     end
     user
   end
