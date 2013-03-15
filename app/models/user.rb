@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
       						uid: auth.uid,
       						facebook_url: auth.extra.raw_info.link
       						)
-      user.skip_confirmation_notification!
+      skip_confirmation_notification!
       user.confirm!
     end
     user
