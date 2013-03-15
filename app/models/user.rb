@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :token_authenticatable, :omniauth_providers => [:facebook, :twitter]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :provider, :uid
+  attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :provider, :uid, :first_name, :last_name, :facebook_url, 
   # attr_accessible :title, :body
   
   public
