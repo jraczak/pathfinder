@@ -63,7 +63,10 @@ Pathfinder::Application.configure do
   
   # Configure mail for sending confirmations from Heroku
   config.action_mailer.default_url_options = { :host => 'http://glacial-fjord-1755.herokuapp.com/' }
-
+  
+  # Sendgrid configuration from Heroku documentation
+  # MOVED TO ENVIRONMENT.RB AT ADVICE OF SENDGRID DOCUMENTATION!
+  
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
