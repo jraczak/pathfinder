@@ -1,5 +1,7 @@
+
+<div id="registration_module">
 <% unless current_user %>
-  <h2>Sign up for Pathfinder</h2>
+  <h1>Sign up for Pathfinder</h1>
   <h4>Enter your email below and we'll begin setting up your account.</h4>
 
   <%= form_for(resource, :as => resource_name, :url => user_registration_path(resource)) do |f| %>
@@ -9,7 +11,7 @@
       <%= f.text_field :email, :placeholder => "username@example.com", :input_html => {:auto_focus => true} %>
 
 
-      <%= f.submit :value => "I'm in, let's go." %>
+      <%= f.submit :value => "I'm in, let's go.", :id => "registration_button" %>
       
       <p>Or <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></p>
 
@@ -20,9 +22,11 @@
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email %>
+    <br>
 
     <%= f.label :password %>
     <%= f.password_field :password %>
+    <br>
 
     <% if devise_mapping.rememberable? -%>
       <%= f.check_box :remember_me %> <%= f.label :remember_me %>
@@ -33,8 +37,6 @@
   
 <% else %>
   <h2>Here is some other text for signed in users</h2>
-  <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+  <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></p>
 <% end %>
-
-<p>For email service account provisioning</p>
-<p>sendgrid</p>
+</div>
