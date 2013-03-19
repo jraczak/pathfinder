@@ -1,0 +1,19 @@
+<% if current_user %>
+  <h1>Create a new trip</h1>
+
+  <%= form_for(@trip) do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= collection_select(:trip, :trip_type_id, TripType.all, :id, :name, :prompt => "Select a trip type" ) %>
+  
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  
+    <%= f.submit %>
+
+  <% end %>
+
+<% else %>  
+  <p>You must be registered and signed in to create a trip. <%= link_to "Register here.", root_path %></p>
+<% end %>

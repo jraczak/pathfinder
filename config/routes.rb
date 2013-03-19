@@ -7,8 +7,11 @@ Pathfinder::Application.routes.draw do
   end
   
   resources :users, :only => :show
+  resources :trips
+  resources :trip_types
 
   root :to => "static_pages#home"
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

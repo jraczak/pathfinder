@@ -37,6 +37,8 @@
   
 <% else %>
   <h2>Here is some other text for signed in users</h2>
+  <p><%= link_to "Browse Trips", trips_path %></p>
+  <p><%= link_to "Create a Trip", new_trip_path%></p>
   <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></p>
 <% end %>
 </div>
